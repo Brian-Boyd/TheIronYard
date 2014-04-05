@@ -1,31 +1,42 @@
 # Hangman Exercise - Welcome Screen
+
+# STEPS:
+# 1) Load text file with words
+# 2) Determine the amount of guesses by multiplying word length by 1.7
+# 3) Create an array of the alphabet to choose from
+# 4) Display board with _ for every letter of word
+# 5) Build an array to store correctly guest letters and replace the _
+# 6) Build an array to store guessed missed letters
+# 7) Delete letters from the alphabet array when the player guesses them
+# 8) Display remaining guesses after each turn
+# 9) If guess is a correct letter, do not subtract from total guesses
+
+
+
+system "clear"
 puts "\n-----------------"
 puts "Lets Play Hangman"
 puts "-----------------"
 
-words = ["tiger","panther","giraffe","elephant","gazelle","zebra"]
-random_word = words.sample
+# words = ["tiger","panther","giraffe","elephant","gazelle","zebra"]
+# @random_word = words.sample
 
-# Read dictionary file
-# http://stackoverflow.com/questions/4475957/how-to-read-an-open-file-in-ruby
-# puts "Start"
-# puts File.read("dictionary.txt")
-# puts "End"
+dictionary = File.open('dictionary.txt')
+words = dictionary.readlines
+words.shuffle!
+@random_word = words.sample
 
-# Method to disply board
-# def get_display(random_word)
-# 	display=
-# 	for spaces in random_word.length
-# 		display=display+'-'
-# 	end
-# 	return display
-# end
-# get_display
+def display_board
+  puts "Your word is... \n"
+  @random_word.length.times do
+    print "_ "
+  end
+  puts "\n\n"
+end
 
-
-
-# Determine the amount of guesses for word length
-total_guesses =	case random_word.length
+# Determine the amount of guesses for word length and multiple by 1.7
+# The case statement below would not be needed
+total_guesses =	case @random_word.length
 	when 5
 		guess = 8
 	when 6
@@ -37,14 +48,15 @@ total_guesses =	case random_word.length
 end
 
 # Create an array of the alphabet
-alphabet = [*('a'..'z')]
+alphabet = [*('A'..'Z')]
 
 # Display details
-puts "#{random_word} - Random word"
-puts "#{random_word.length} - Total letters in word"
+puts "#{@random_word} - Random word - should be hidden"
 puts "#{total_guesses} - Total guesses"
 puts "Unguessed letters: #{[alphabet.join(' ')]}"
 puts "-----------------"
+
+display_board
 
 # Guess a letter
 guessed_letters = []
@@ -59,24 +71,14 @@ puts "Unguessed Letters: #{alphabet.join(' ')}"
 
 # Search to see if letter guessed is in the random word.
 # If yes, show letter. If no, loose a life.
-random_word.split("")
-test = Array.new(random_word.length)
+@random_word.split("")
+test = Array.new(@random_word.length)
 # %w(test).each_with_index do |letter, index|
 # 	if guessed_letter == letter
 # 		test[index] = guessed_letter
 # 	end
 # end
 # puts test
-
-
-# i = 0
-# while i < total_guesses
-# end
-
-
-
-
-
 
 
 
@@ -132,8 +134,8 @@ test = Array.new(random_word.length)
 # The following are trial/error and partial notes #
 ###################################################
 
-# random_word.split("")
-# test = Array.new(random_word.length)
+# @random_word.split("")
+# test = Array.new(@random_word.length)
 # test.each_with_index do |letter, index|
 # 	if guessed_letter == letter
 # 		test[index] = guessed_letter
@@ -141,8 +143,8 @@ test = Array.new(random_word.length)
 # end
 
 # methods of interest: each, index, include, collect
-# random_word.index(guessed_letter)
-# # random_word.split("")
+# @random_word.index(guessed_letter)
+# # @random_word.split("")
 # while word_index(guessed_letter)
 # end
 
@@ -162,22 +164,6 @@ test = Array.new(random_word.length)
 
 
 
-
-# display_board
-# while @game_on == true
-# 	puts "Player 1 Choice (1-9):"
-# 	player_1_choice = gets.chomp
-# 	game_play(player_1_choice, 1)
-# 	display_board
-# 	check_win(1)
-# 	puts "Player 2 Choice (1-9):"
-# 	player_2_choice = gets.chomp
-# 	game_play(player_2_choice, 2)
-# 	display_board
-# 	check_win(2)
-# end
-
-
 # Reference Links
 # http://www.ruby-doc.org/core-1.9.3/Array.html
 # http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-each_index
@@ -187,11 +173,3 @@ test = Array.new(random_word.length)
 # http://www.sitepoint.com/guide-ruby-collections-part-arrays/
 # http://rubyquiz.com/quiz130.html
 # https://gist.github.com/JDLeigh10/3029383
-
-
-
-
-
-
-
-

@@ -1,6 +1,4 @@
-# Fix a nice drink
-# Keep game going!
-# I need cards
+# Blackjack
 player_cards = []
 dealer_cards = []
 @gameon = true
@@ -9,7 +7,7 @@ def get_card
 	rand(1..11)
 end
 
-def check_win(player,dealer)  # parameters is anything passed inside a function
+def check_win(player,dealer)
 	if player == 21
 		puts "BLACKJACK"
 	elsif player > 21
@@ -68,9 +66,8 @@ while @gameon == true
 	end
 end
 
-
+# Dealer's turn
 if player_card_values < 22
-	# Dealer's turn
 	@gameon = true
 	while @gameon == true
 		dealer_card_values = 0
