@@ -1,7 +1,7 @@
 require "./horse.rb"
 require "./track.rb"
 
-# start_screen
+start_screen
 
 @race_length = 50
 @horses = []
