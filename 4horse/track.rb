@@ -1,4 +1,3 @@
-# Welcome Screen
 def start_screen
   system "clear"
   print "\n\rWelcome to Iron Yard Downs"; sleep 2
@@ -46,8 +45,24 @@ def turn
   cheat_commands
 end
 
+def check_win
+  if @horses[0].position.to_i > @race_length
+    @race_on = false
+    puts "\n#{@horses[0].name} is the winner\n\n"
+  elsif @horses[1].position.to_i > @race_length
+    @race_on = false
+    puts "\n#{@horses[1].name} is the winner\n\n"
+  elsif @horses[2].position.to_i > @race_length
+    @race_on = false
+    puts "\n#{@horses[2].name} is the winner\n\n"
+  elsif @horses[3].position.to_i > @race_length
+    @race_on = false
+    puts "\n#{@horses[3].name} is the winner\n\n"
+  end
+end
+
 def cheat_commands
-  puts "Enter... 1 for fast | 2 for faster | 3 for fastest"
+  puts "Press enter to continue.\n\nIf you want to cheat, press a number, then enter.\n\n1 for fast | 2 for faster | 3 for fastest"
 end
 
 def clear
