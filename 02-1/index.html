@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <title>really cool html</title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
-
   <body>
 
     <div class="container">
@@ -27,9 +27,10 @@
       <div class="content">
 
         <section>
-          <section class="left-column">
+          <article>
             <h2 class="large-heading">Rock Climbing to The Heavens</h2>
-            <p><img src="img/face-small.jpg"> Anne Marie on <a href="#">Saturday, April 12, 2014</a></p>
+
+            <p><img src="img/face-small.jpg" class="face-small-round"> Anne Marie on <a href="#">Saturday, April 12, 2014</a></p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -61,21 +62,21 @@
 
             <div class="comment-buttons" id="buttons">
               <ul>
-                <li>btn</li>
-                <li>Read Comments</li>
-                <li>btn</li>
-                <li>Read Later</li>
-                <li>btn</li>
-                <li>Share This Post</li>
+                <li class="comment-icon">Read Comments</li>
+                <li class="read-icon">Read Later</li>
+                <li class="share-icon">Share This Post</li>
               </ul>
             </div>
 
-          </section>
+          </article>
 
           <aside>
 
             <div class="sidebox shadow">
-              <div class="img-face-circular"></div>
+              <div class="right-img">
+                <img src="img/face.jpg" class="cool-img"> 
+              </div>
+
               <p class="tac">Anne Marie</p>
               <p class="tac social"><a href="http://twitter.com">Twitter</a> &nbsp;&nbsp;&nbsp; <a href="http://facebook.com">Facebook</a> &nbsp;&nbsp;&nbsp; <a href="http://istagram.com">Istagram</a></p>
 
@@ -83,7 +84,10 @@
 
             <div class="sidebox shadow">
 
-              <div class="img-climb"></div>
+              <div class="right2-img">
+                <img src="img/climb.jpg" class="cool2-img"> 
+              </div>
+
               <p class="tar"><a href="#">About This Ad</a></p>
 
               <h2 class="tac">You just have to stretch!</h2>
@@ -103,19 +107,21 @@
 
     </div>
 
-    <div class="posts">
+<!--
+     <div class="posts">
       <img src="img/01.jpg" class="img-responsive">
       <img src="img/08.jpg" class="img-responsive">
       <img src="img/03.jpg" class="img-responsive">
       <img src="img/05.jpg" class="img-responsive">
-    </div>
+    </div> 
+-->
 
-    <footer>
+    <div class="footer">
       <div class="footer-logo"></div>
       <div class="footer-copyright">
         &copy; 2014 The Ironyard Student.<br>All Rights Reserved.
       </div>
-      <div class="footer-right" id="footer-nav">
+      <div class="footer-right">
         <ul>
           <li>Nav Item 1 | </li>
           <li>Nav Item 2 | </li>
@@ -124,7 +130,7 @@
           <li>Nav Item 5</li>
         </ul>
       </div>
-    </footer>
+    </div>
 
   </body>
 </html>
