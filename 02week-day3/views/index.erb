@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <!-- logo, top nav and head title -->
+      <%= erb :header %>
+    </div>
+
+    <div class="nav-main">
+      <!-- logo, top nav and head title -->
+      <%= erb :nav_main %>
+    </div>
+
+    <div class="left-column">
+      <!-- your main content -->
+      <%= yield %>
+    </div>
+
+    <div class="right-column">
+      <!-- your sidebar -->
+      <%= erb :sidebar %>
+    </div>
+
+    <div class="footer">
+      <!-- your footer -->
+      <%= erb :footer %>
+    </div>
+
+  </div>
+
+</body>
+</html>
