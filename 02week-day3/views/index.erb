@@ -9,30 +9,35 @@
 
     <div class="header">
       <!-- logo, top nav and head title -->
-      <%= erb :header %>
-    </div>
+        <%= erb :header %>
+    </div><!-- end header -->
 
     <div class="nav-main">
       <!-- logo, top nav and head title -->
-      <%= erb :nav_main %>
-    </div>
+      <%= erb :nav %>
+    </div><!-- end navbar -->
+
+    <div class="billboard">
+      <!-- logo, top nav and head title -->
+      <%= erb :billboard %>
+    </div><!-- end billboard -->
 
     <div class="left-column">
       <!-- your main content -->
-      <%= yield %>
-    </div>
+      <%= erb yield %>
+    </div><!-- end main content -->
 
     <div class="right-column">
       <!-- your sidebar -->
       <%= erb :sidebar %>
-    </div>
+    </div><!-- end sidebar -->
 
     <div class="footer">
       <!-- your footer -->
       <%= erb :footer %>
-    </div>
+    </div><!-- end footer -->
 
-  </div>
+  </div><!-- end container -->
 
 </body>
 </html>

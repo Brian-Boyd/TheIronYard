@@ -17,14 +17,14 @@ get '/about' do
   erb :about, layout: :index
 end
 
-# Product page (product.erb)
-get '/product' do
+# Services page (services.erb)
+get '/services' do
   @sku = [
     {product_name: "Bubble Gum", Sku: "436-729"},
     {product_name: "Rocket Launcher", Sku: "943-678"},
     {product_name: "Football", Sku: "763-976"}
   ]
-  erb :product, layout: :index
+  erb :services, layout: :index
 end
 
 
