@@ -156,23 +156,23 @@ body {
 }
 
 .boxshadow {
-	background-color: #A96C26;
-	border-radius: 5px;
-	box-shadow: 5px 5px 5px #000000;
-	min-height: 65px;
-	margin-right: 40px;
-	margin-top: 20px;
-	padding: 5px 15px;
-	width: 95%;
+  background-color: #A96C26;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #000000;
+  min-height: 65px;
+  margin-right: 40px;
+  margin-top: 20px;
+  padding: 5px 15px;
+  width: 95%;
 }
 
 .boxshadow h3 {
-	color: #000;
-	text-align: center;
+  color: #000;
+  text-align: center;
 }
 
 .boxshadow .color {
-	background-color: #ccc;
+  background-color: #ccc;
 }
 
 /*****************/
