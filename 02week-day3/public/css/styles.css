@@ -78,6 +78,7 @@ body {
   height: 40px;
   background-color:#39474E;
   margin: 0;
+  position: relative;
   /*border: 1px dashed yellow;*/
   background: #39474e;
   background: -moz-linear-gradient(bottom, #191f22 0%, #39474e 50%, #4f626b 51%, #4c5f69 78%, #9caeb7 100%);
@@ -119,8 +120,8 @@ body {
 .nav-right {
   width: 230px;
   height: 30px;
-  position: relative;
-  left: 100px;
+  position: absolute;
+  right: -10px;
   top: 7px;
   display: inline-block;
   /*border: 1px dashed red;*/
@@ -154,25 +155,33 @@ body {
   display: inline-block;
   /*border: 1px dashed blue;*/
 }
-
+		
 .boxshadow {
-  background-color: #A96C26;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px #000000;
-  min-height: 65px;
-  margin-right: 40px;
-  margin-top: 20px;
-  padding: 5px 15px;
-  width: 95%;
+	background-color: #A96C26;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #000000;
+	min-height: 65px;
+	margin-right: 40px;
+	margin-top: 40px;
+	padding: 5px 15px;
+	width: 95%;
 }
 
 .boxshadow h3 {
-  color: #000;
-  text-align: center;
+	color: #FFF;
+	text-align: center;
 }
 
-.boxshadow .color {
-  background-color: #ccc;
+.boxshadow .widget-title {
+	background-color: #ccc;
+	border-radius: 5px 5px 0 0;
+  margin: -14px -15px 13px;
+  background: #39474e;
+  background: -moz-linear-gradient(bottom, #191f22 0%, #39474e 50%, #4f626b 51%, #4c5f69 78%, #9caeb7 100%);
+  background: -webkit-linear-gradient(bottom, #191f22 0%, #39474e 50%, #4f626b 51%, #4c5f69 78%, #9caeb7 100%);
+  background: -o-linear-gradient(bottom, #191f22 0%, #39474e 50%, #4f626b 51%, #4c5f69 78%, #9caeb7 100%);
+  background: -ms-linear-gradient(bottom, #191f22 0%, #39474e 50%, #4f626b 51%, #4c5f69 78%, #9caeb7 100%);
+  background: linear-gradient(to top, #191f22 0%, #39474e 50%, #4f626b 51%, #4c5f69 78%, #9caeb7 100%);
 }
 
 /*****************/

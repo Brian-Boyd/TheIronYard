@@ -1,6 +1,22 @@
 require 'sinatra'
 require 'faker'
 
+@person_name            = Faker::Name.name
+@person_email           = Faker::Internet.email
+@person_company         = Faker::Company.name
+@person_company_slogan  = Faker::Company.bs
+@person_phone           = Faker::PhoneNumber.phone_number
+@person_address         = Faker::Address.street_address
+@person_city            = Faker::Address.city
+@person_state           = Faker::Address.state_abbr
+@person_zip             = Faker::Address.zip_code
+
+
+
+def paragraph(sentence_count = 3, supplemental = false, random_sentences_to_add = 3)
+  sentences(resolve(sentence_count) + rand(random_sentences_to_add.to_i).to_i, supplemental).join(' ')
+end
+
 # Home page 
 get '/' do
   @root = "This is the home page!"
@@ -10,9 +26,12 @@ end
 # About page (about.erb)
 get '/about' do
   @team = [
-    {first_name: "Joe", last_name: "President"},
-    {first_name: "Nancy", last_name: "Developer"},
-    {first_name: "Lucy", last_name: "Loafer"}
+    {name: Faker::Name.name, city: Faker::Address.city, state: Faker::Address.state},
+    {name: Faker::Name.name, city: Faker::Address.city, state: Faker::Address.state},
+    {name: Faker::Name.name, city: Faker::Address.city, state: Faker::Address.state},
+    {name: Faker::Name.name, city: Faker::Address.city, state: Faker::Address.state},
+    {name: Faker::Name.name, city: Faker::Address.city, state: Faker::Address.state},
+    {name: Faker::Name.name, city: Faker::Address.city, state: Faker::Address.state}
   ]
   erb :about, layout: :index
 end
