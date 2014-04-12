@@ -1,8 +1,6 @@
-<h1>Meet the Team</h1>
-
-<ul>
+<!-- <ul>
 <% @team.each do |person| %>
   <li><%= person[:name] %> <br>
     <%= person[:city] %>, <%= person[:state] %></li>
 <% end %>
-</ul>
+</ul> -->
