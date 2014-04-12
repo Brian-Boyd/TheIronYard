@@ -1,0 +1,9 @@
+<h1>About Us</h1>
+
+<p>Meet the Team</p>
+
+<ul>
+<% @team.each do |person| %>
+  <li><%= person[:first_name] %> <%= person[:last_name] %></li>
+<% end %>
+</ul>
