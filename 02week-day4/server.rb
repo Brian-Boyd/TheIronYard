@@ -3,28 +3,27 @@ require 'faker'
 
 # Home page 
 get '/' do
-  @root = "This is the home page!"
-  erb :home, layout: :index
+  erb :content, layout: :index
 end
 
 # About page (about.erb)
 get '/about' do
-  @team = [
-    {first_name: "Joe", last_name: "President"},
-    {first_name: "Nancy", last_name: "Developer"},
-    {first_name: "Lucy", last_name: "Loafer"}
-  ]
   erb :about, layout: :index
 end
 
-# Product page (product.erb)
-get '/product' do
-  @sku = [
-    {product_name: "Bubble Gum", Sku: "436-729"},
-    {product_name: "Rocket Launcher", Sku: "943-678"},
-    {product_name: "Football", Sku: "763-976"}
-  ]
-  erb :product, layout: :index
+# Post page (post.erb)
+get '/post' do
+  erb :post, layout: :index
+end
+
+# Edit post (edit.erb)
+get '/edit' do
+  erb :edit, layout: :index
+end
+
+# Delete Post (delete.erb)
+get '/delete' do
+  erb :delete, layout: :index
 end
 
 
