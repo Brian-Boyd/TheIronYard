@@ -1,4 +1,5 @@
-Project: Horse Race
+== Project: Horse Race
+
 -At least one class is required
 -Race requires 4 horses each with a name
 -Pressing enter will progress the game (turn based)
