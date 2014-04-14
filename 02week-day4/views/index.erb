@@ -1,98 +1,33 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog Template for Bootstrap</title>
+<title>What's Up in Brian's World</title>
 
 <!-- CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/blog.css" rel="stylesheet">
 <link href="css/custom.css" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Flamenco' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Alegreya+SC:700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <div class="blog-masthead">
   <div class="container">
-    <nav class="blog-nav"> <a class="blog-nav-item active" href="#">Home</a> <a class="blog-nav-item" href="#">About Brian</a>  </nav>
+    <%= erb :nav %>
   </div>
 </div>
 <div class="container">
   <div class="blog-header">
-    <h1 class="blog-title">Brian's IronYard Blog</h1>
-    <p class="lead blog-description">The official blog project started during week 2.</p>
+    <%= erb :header %>
   </div>
   <div class="row">
     <div class="col-sm-8 blog-main">
-      <div class="blog-post">
-        <h2 class="blog-post-title">Sample blog post</h2>
-        <p class="blog-post-meta"><i class="glyphicon glyphicon-calendar"></i> January 1, 2014 | <i class="glyphicon glyphicon-user"></i> <a href="#">Brian</a></p>
-        <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-        <hr>
-        <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-        <blockquote>
-          <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-        </blockquote>
-        <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-        
-        <p class="text-right"><button type="button" class="btn btn-default">Continue Reading...</button></p>
-        <p class="text-right"><i class="glyphicon glyphicon-tags"></i> &nbsp; tag1, tag2, tag3</p>
-      </div>
-      <!-- /.blog-post -->
-      
-      <div class="blog-post">
-        <h2 class="blog-post-title">Another blog post</h2>
-        <p class="blog-post-meta"><i class="glyphicon glyphicon-calendar"></i> December 23, 2013 | <i class="glyphicon glyphicon-user"></i> <a href="#">Jacob</a></p>
-        <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-        <blockquote>
-          <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-        </blockquote>
-        <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-        <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        
-        <p class="text-right"><button type="button" class="btn btn-default">Continue Reading...</button></p>
-        <p class="text-right"><i class="glyphicon glyphicon-tags"></i> &nbsp; tag1, tag2, tag3</p>
-      </div>
-      <!-- /.blog-post -->
-      
-      <div class="blog-post">
-        <h2 class="blog-post-title">New feature</h2>
-        <p class="blog-post-meta"><i class="glyphicon glyphicon-calendar"></i> December 14, 2013 | <i class="glyphicon glyphicon-user"></i> <a href="#">Chris</a></p>
-        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <ul>
-          <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-          <li>Donec id elit non mi porta gravida at eget metus.</li>
-          <li>Nulla vitae elit libero, a pharetra augue.</li>
-        </ul>
-        <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-        <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-        
-        <p class="text-right"><button type="button" class="btn btn-default">Continue Reading...</button></p>
-        <p class="text-right"><i class="glyphicon glyphicon-tags"></i> &nbsp; tag1, tag2, tag3</p>
-      </div>
-      <!-- /.blog-post -->
-      
-      <ul class="pager">
-        <li><a href="#">Previous</a></li>
-        <li><a href="#">Next</a></li>
-      </ul>
+      <%= erb yield %>
     </div>
     <!-- /.blog-main -->
     
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-      <div class="sidebar-module sidebar-module-inset">
-        <h4>About</h4>
-        <p>Brian was born in Chicago, IL, and spent most of his childhood in the beautiful mountains of West Virginia where he enjoyed hiking, camping, and spending time with friends. He has called many places home, from Jacksonville, FL to Brooklyn, NY to Atlanta, GA. He settled in Charleston, SC in 2006 and lives on James Island with his lovely wife Helen and daughter Isabel.</p>
-      </div>
-      <div class="sidebar-module">
-        <h4>Elsewhere</h4>
-        <ol class="list-unstyled">
-          <li><a href="http://cubicalweb.com" target="_blank">Personal Website</a></li>
-          <li><a href="https://github.com/Brian-Boyd" target="_blank">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/pub/brian-boyd/23/bba/bb6" target="_blank">LinkedIn</a></li>
-          <li><a href="https://www.youtube.com/user/SimCityBrian" target="_blank">YouTube</a></li>
-          <li><a href="https://twitter.com/SimCityBrian" target="_blank">Twitter</a></li>
-          <li><a href="https://www.facebook.com/cubicalweb" target="_blank">Facebook</a></li>
-        </ol>
-      </div>
+      <%= erb :sidebar %>
     </div>
     <!-- /.blog-sidebar --> 
     
@@ -103,14 +38,8 @@
 <!-- /.container -->
 
 <div class="blog-footer">
-  <p> <a href="#">Back to top</a> </p>
+  <%= erb :footer %>
 </div>
 
-<!-- Bootstrap core JavaScript
-    ================================================== --> 
-<!-- Placed at the end of the document so the pages load faster --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
-<script src="../../dist/js/bootstrap.min.js"></script> 
-<script src="../../assets/js/docs.min.js"></script>
 </body>
 </html>

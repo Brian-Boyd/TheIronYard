@@ -28,17 +28,20 @@ get '/about' do
   erb :about, layout: :index
 end
 
-# Services page (services.erb)
-get '/services' do
-  @sku = [
-    {product_name: "Bubble Gum", Sku: "436-729"},
-    {product_name: "Rocket Launcher", Sku: "943-678"},
-    {product_name: "Football", Sku: "763-976"}
-  ]
-  erb :services, layout: :index
+# Product page (products.erb)
+get '/products' do
+
+  @product = []
+  10.times do
+    @product.push(
+    { 
+      product_name:   Faker::Commerce.product_name
+    })
+  end
+  erb :products, layout: :index
 end
 
-get '/sidebar_partial1'  do
-  @para = Faker::Lorem.sentences(3)
+get '/sidebar_partial1' do
+  @sidepara = Faker::Lorem.sentence(2).join(" ")
   erb :sidebar, layout: :index
 end
