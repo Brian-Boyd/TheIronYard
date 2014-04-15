@@ -1,7 +1,11 @@
       <div class="blog-post">
         <h2 class="blog-post-title"><%= post.title %></h2>
-        <p class="blog-post-meta"><i class="glyphicon glyphicon-calendar"></i> January 1, 2014 | <a href="/edit/<%= post.id %>">Edit</a> | <a href="/delete/<%= post.id %>">Delete</a></p>
+        <p class="blog-post-meta"><i class="glyphicon glyphicon-calendar"></i> January 1, 2014 | <a href="/edit/<%= post.id %>">Edit</a></p>
         <p><%= post.content %></p>
+        <form action="/delete/<%= post.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" class="delete-post" value="Delete post">
+        </form>
         
         <p class="text-right"><a href="/full_post/<%= post.id %>"><button type="button" class="btn btn-default">Continue Reading...</button></a></p>
       </div>

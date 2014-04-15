@@ -19,7 +19,7 @@ DataMapper.finalize.auto_upgrade!
 
 # Home page 
 get '/' do
-  @posts = Post.all(:order => [ :id.desc ], :limit => 3)
+  @posts = Post.all(:order => [ :id.desc ], :limit => 5)
   # How to 
   erb :content, layout: :index
 end
@@ -55,18 +55,16 @@ get '/edit/:id' do
   erb :edit, layout: :index
 end
 
-# Edit post (edit.erb)
 put '/edit/:id' do
   @post = Post.get params[:id]
   @post.update params[:post]
   redirect to('/')
-  # erb :edit, layout: :index
 end
 
-# Delete Post (delete.erb)
-get '/delete/:id' do
+# Delete Post
+delete '/delete/:id' do
+  puts params
   @post = Post.get params[:id]
   @post.destroy
   redirect to('/')
-  # erb :delete, layout: :index
 end
