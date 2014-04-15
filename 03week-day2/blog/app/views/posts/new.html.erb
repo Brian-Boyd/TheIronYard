@@ -1,0 +1,12 @@
+<h4>New Post</h4>
+
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: "Title" %>
+  <br>
+  <%= f.label :content %>
+  <%= f.text_area :content, placeholder: "Type what is on your mind..." %>
+  <br>
+  <%= f.submit %>
+<% end %>
+

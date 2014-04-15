@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What's Up in Brian's World</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Flamenco' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+SC:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav"> 
+      <a class="blog-nav-item active" href="/">Home</a> 
+      <a class="blog-nav-item" href="/about">About Brian</a> 
+      <a class="blog-nav-item" href="/posts/new">Create Post</a>
+    </nav>
+  </div>
+</div>
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">What's Up in Brian's World</h1>
+    <p class="lead blog-description">An IronYard Student Project</p>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 blog-main">
+      <%= yield %>
+    </div>
+    <!-- /.blog-main -->
+    
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+      <div class="sidebar-module sidebar-module-inset">
+        <h4>Elsewhere</h4>
+        <ol class="list-unstyled">
+          <li><a href="http://cubicalweb.com" target="_blank">Personal Website</a></li>
+          <li><a href="https://github.com/Brian-Boyd" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/pub/brian-boyd/23/bba/bb6" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/user/SimCityBrian" target="_blank">YouTube</a></li>
+          <li><a href="https://twitter.com/SimCityBrian" target="_blank">Twitter</a></li>
+        </ol>
+      </div>
+    </div>
+    <!-- /.blog-sidebar --> 
+    
+  </div>
+  <!-- /.row --> 
+  
+</div>
+<!-- /.container -->
+
+<div class="blog-footer">
+<p> <a href="#">Back to top</a> </p>
+</div>
+
+</body>
+</html>
