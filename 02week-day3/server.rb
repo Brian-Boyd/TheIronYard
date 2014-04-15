@@ -3,6 +3,9 @@ require 'faker'
 
 # Home page 
 get '/' do
+
+  @sidebar_text = Faker::Lorem.paragraph(3)
+
   @para = []
   6.times do
     @para.push(
@@ -15,6 +18,8 @@ end
 
 # About page (about.erb)
 get '/about' do
+
+  @sidebar_text = Faker::Lorem.paragraph(3)
 
   @team = []
   10.times do
@@ -31,6 +36,8 @@ end
 # Product page (products.erb)
 get '/products' do
 
+  @sidebar_text = Faker::Lorem.paragraph(3)
+
   @product = []
   10.times do
     @product.push(
@@ -39,9 +46,4 @@ get '/products' do
     })
   end
   erb :products, layout: :index
-end
-
-get '/sidebar_partial1' do
-  @sidepara = Faker::Lorem.sentence(2).join(" ")
-  erb :sidebar, layout: :index
 end
