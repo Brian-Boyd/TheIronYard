@@ -1,0 +1,1 @@
+Movie Collection is just a shell app. Will need to add more features.
