@@ -1,0 +1,10 @@
+<div class="post">
+
+<h1>Movie Colletion</h1>
+
+<% @movie.each do |movie| %>
+  <%= link_to movie.name, movie_path(movie) %>
+  <br>
+<% end %>
+
+</div>

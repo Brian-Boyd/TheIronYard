@@ -1,0 +1,18 @@
+<div class="post">
+
+<h1><%= @movie.name %></h1>
+
+Released: <%= @movie.year %>
+<br>
+Genre: <%= @movie.genre %>
+<br>
+Film Rating: <%= @movie.film_rating %>
+<br>
+Critic Rating: <%= @movie.critic_rating %>
+<br>
+Description: <%= @movie.description %>
+<br>
+  <%= link_to 'Edit', edit_movie_path(@movie.id) %>
+  | 
+  <%= link_to 'Delete', movie_path(@movie.id), method: :delete %>
+</div>

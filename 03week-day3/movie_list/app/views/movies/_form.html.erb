@@ -1,0 +1,22 @@
+<%= form_for @movie do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+  <br>
+  <%= f.label :genre %>
+  <%= f.select :genre, options_for_select(Movie::GENRE), include_blank:'--- Select ---' %>
+  <br>
+  <%= f.label :film_rating %>
+  <%= f.select :film_rating,options_for_select(Movie::FILM_RATING), include_blank:'--- Select --- ' %>
+  <br>
+  <%= f.label :critic_rating %>
+  <%= f.select :critic_rating,options_for_select(Movie::CRITIC_RATING), include_blank:'--- Select --- ' %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br>
+  <%= f.submit %>
+<% end %>
+<br>

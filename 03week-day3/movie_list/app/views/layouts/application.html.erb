@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brian's Movie Catolog App</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Flamenco' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+SC:700' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="container">
+    <nav class="nav"> 
+      <a class="nav-item active" href="/">Home</a> 
+      <a class="nav-item" href="/movies/new">Add Movie</a>
+    </nav>
+  </div>
+</div>
+<div class="container">
+  <div class="header">
+    <h1 class="title">Brian's Movie Catolog App</h1>
+    <p class="tagline">Another IronYard Student Project</p>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 main">
+      <% render 'layouts/flash' %>
+      <%= yield %>
+    </div>
+    <!-- /.main -->
+    
+    <div class="col-sm-3 col-sm-offset-1">
+      <div class="sidebar-module sidebar-module-inset">
+        <h4>Elsewhere</h4>
+        <ol class="list-unstyled">
+          <li><a href="http://cubicalweb.com" target="_blank">Personal Website</a></li>
+          <li><a href="https://github.com/Brian-Boyd" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/pub/brian-boyd/23/bba/bb6" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/user/SimCityBrian" target="_blank">YouTube</a></li>
+          <li><a href="https://twitter.com/SimCityBrian" target="_blank">Twitter</a></li>
+        </ol>
+      </div>
+    </div>
+    <!-- /.sidebar --> 
+    
+  </div>
+  <!-- /.row --> 
+  
+</div>
+<!-- /.container -->
+
+<div class="footer">
+<p> <a href="#">Back to top</a> </p>
+</div>
+
+</body>
+</html>
