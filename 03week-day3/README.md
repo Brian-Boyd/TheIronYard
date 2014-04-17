@@ -1,1 +1,2 @@
-Movie Collection is just a shell app. Will need to add more features.
+-movie_collection_shell is a barebones app with just a name for the movie title.
+-movie_collection extends the app.
