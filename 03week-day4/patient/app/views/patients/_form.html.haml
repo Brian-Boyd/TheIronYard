@@ -1,0 +1,10 @@
+= form_for @patient do |f|
+  = f.label :name
+  = f.text_field :name
+  %br
+  = f.label :description
+  = f.text_area :description
+  %br
+  = f.submit
+%hr
+= link_to "home", root_path
