@@ -1,9 +1,10 @@
+/ = form_for @patient, :html => {:class => "form-horizontal"} do |f|
 = form_for @patient do |f|
   = f.label :name
-  = f.text_field :name
+  = f.text_field :name, placeholder: "Patient Name"
   %br
   = f.label :description
-  = f.text_area :description
+  = f.text_area :description, placeholder: "Describe symptoms"
   %br
   = f.submit
 %hr

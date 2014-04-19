@@ -1,7 +1,8 @@
 class PatientsController < ApplicationController
+  before_filter :find_patient, only: [:show, :edit, :update, :waiting, :doctor, :xray, :surgery, :leaving, :billpay, :release]
+  # around_filter :redirect_root, only: [:create, :update, :waiting, :doctor, :xray, :surgery, :leaving, :billpay]
 
   def show
-    @patient = Patient.find params[:id]
   end
 
   def new
@@ -10,58 +11,71 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.create patient_params
-    redirect_to root_path
+    if @patient.save
+      flash[:notice] = "Success! Success!!"
+      redirect_to root_path
+    else
+      flash[:error] = "Error detected. Please try again."
+      render :new
+    end
   end
 
   def edit
-    @patient = Patient.find params[:id]
   end
 
   def update
-    @patient = Patient.find params[:id]
     @patient.update_attributes patient_params
     redirect_to root_path
   end
 
   def waiting
-    @patient = Patient.find params[:id]
     @patient.go_to_waiting!
     redirect_to root_path
   end
 
   def doctor
-    @patient = Patient.find params[:id]
     @patient.go_to_doctor!
     redirect_to root_path
   end
 
   def xray
-    @patient = Patient.find params[:id]
     @patient.go_to_xray!
     redirect_to root_path   
   end
 
   def surgery
-    @patient = Patient.find params[:id]
     @patient.go_to_surgery!
     redirect_to root_path   
   end
 
-  def leaving
-    @patient = Patient.find params[:id]
-    @patient.go_to_leaving!
+  def billpay
+    @patient.go_to_billpay!
     redirect_to root_path   
   end
 
-  def billpay
-    @patient = Patient.find params[:id]
-    @patient.go_to_billpay!
-    redirect_to root_path   
+  def leaving
+    @patient.release!
+    redirect_to release_patient_path(@patient)
+  end
+
+  def release
+    if
+      flash[:error] = "Please enter release notes"
+      render :release
+    end
   end
 
 private
   def patient_params
     params.require(:patient).permit(:name, :description)
   end
+
+  def find_patient
+    @patient = Patient.find params[:id]
+  end
+
+  # def redirect_root
+  #   redirect_to root_path 
+  # end
 
 end

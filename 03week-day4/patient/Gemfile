@@ -40,3 +40,4 @@ gem 'spring',        group: :development
 
 gem 'workflow'
 gem 'haml'
+gem 'bootstrap_form'
