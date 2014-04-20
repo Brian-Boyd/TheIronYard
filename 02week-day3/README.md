@@ -1,4 +1,4 @@
-== Assignment
+== Assignment (Sinatra and Faker)
 
 Instructions 4/9/2014
 ---------------------

@@ -1,6 +1,0 @@
-<!-- <ul>
-<% @team.each do |person| %>
-  <li><%= person[:name] %> <br>
-    <%= person[:city] %>, <%= person[:state] %></li>
-<% end %>
-</ul> -->
