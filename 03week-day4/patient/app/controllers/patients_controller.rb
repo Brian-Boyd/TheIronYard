@@ -59,15 +59,19 @@ class PatientsController < ApplicationController
   end
 
   def release
-    if
-      flash[:error] = "Please enter release notes"
-      render :release
-    end
+    # @patient.update_attributes patient_params
+    # @patient.save
+    #   flash[:notice] = "Your patient has been released from the hospital"
+    #   redirect_to root_path
+    # else
+    #   flash[:error] = "Please enter release notes"
+    #   render :leaving
+    # end
   end
 
 private
   def patient_params
-    params.require(:patient).permit(:name, :description)
+    params.require(:patient).permit(:name, :description, :release_note)
   end
 
   def find_patient

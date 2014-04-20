@@ -1,11 +1,15 @@
-/ = form_for @patient, :html => {:class => "form-horizontal"} do |f|
-= form_for @patient do |f|
-  = f.label :name
-  = f.text_field :name, placeholder: "Patient Name"
-  %br
-  = f.label :description
-  = f.text_area :description, placeholder: "Describe symptoms"
-  %br
-  = f.submit
-%hr
-= link_to "home", root_path
+.well.bs-component
+  = form_for @patient, :html => {:class => "form-horizontal"} do |f|
+    %fieldset
+      .form-group
+        = f.label :name, class: "col-lg-2 control-label"
+        .col-lg-10
+          = f.text_field :name, placeholder: "Patient Name", class: "form-control"
+      .form-group
+        = f.label :description, class: "col-lg-2 control-label"
+        .col-lg-10
+          = f.text_area :description, placeholder: "Describe symptoms", class: "form-control"
+      .form-group
+        = f.submit 'Submit', :class => 'pull-right'
+
+= link_to "Home", root_path, :class => 'box pull-right'

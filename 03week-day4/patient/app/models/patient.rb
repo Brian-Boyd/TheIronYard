@@ -1,10 +1,7 @@
 class Patient < ActiveRecord::Base
   validates :name, presence: true
-  validates :description, presence: true, if: :patient_leaving
-
-  def patient_leaving
-    workflow_state == 'leaving'
-  end
+  validates :description, presence: true
+  # validates :release_note, presence: true
 
   include Workflow
   workflow do

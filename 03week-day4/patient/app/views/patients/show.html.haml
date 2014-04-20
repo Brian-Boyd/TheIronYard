@@ -1,8 +1,21 @@
-%h1 Show Patient Information
+%h3 Show Patient Information
+
+%span.label.label-danger
+  Patient's Name: 
 = @patient.name
-%br
+%p
+%span.label.label-danger
+  Symptoms: 
 = @patient.description
-%br
+%p
+%span.label.label-danger
+  Workflow: 
 = @patient.workflow_state
-%br
-= link_to 'Home', root_path
+%p
+%span.label.label-danger
+  Release Notes: 
+= @patient.release_note
+%p
+
+= link_to "Edit Patient", edit_patient_path, :class => 'box'
+= link_to "Home", root_path, :class => 'box pull-right'
