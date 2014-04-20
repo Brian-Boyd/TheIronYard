@@ -1,14 +1,2 @@
-Always read this file.
-
-GIT COMMENDS
-git add _____ (git add . = adds all)
-git commit ___ -m "message goes here"
-git push origin master
-
----------
-git status
-git diff
-
--a = all
--m = message
-note: you can combine commands (i.e. -am = all, message)
+This repository is a cronological list of projects worked on during my time at The Iron Yard. The course is Rails Engineering and the instructor is Nick Bucciarelli. You can learn more about this course at...
+http://theironyard.com/academy/rails-engineering/
