@@ -1,7 +1,7 @@
 == Day 2 at The Iron Yard
 We covered loops during the morning lecture and then coded a game of blackjack.
 
-== Blackjack
+== Blackjack (Ruby)
 
 -Set local variables for the player's cards and the dealer's cards and assigned them each an empty array
 -Set gammon as an instance variable with a boolean value of true for starting/ending of game

@@ -1,0 +1,37 @@
+.container {
+  width: 700px;
+}
+
+tac {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.action {
+  padding: 2px 5px;
+  margin: 0 0 1em 1em;
+  background: #94B26F;
+  color: #4C2516;
+  border: 1px solid #4C2516;
+  text-decoration: none;
+}
+
+.list table {
+  width: 100%;
+}
+
+.list table tr td {
+  padding: 5px;
+  border: 1px solid #CCC;
+}
+
+.list table th {
+  text-align: center;
+}
