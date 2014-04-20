@@ -1,31 +1,3 @@
-== README
+== Assignment 4/16/2014 (DVD Movie Collection)
 
-This app is real simple. It allows a person to use CRUD (create, read, update, delete) for a movie collection database. Not enough time to spend on styles so I quickly modified the blog styles from the app built yesterday. (03week-day2)
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This app is real simple. It allows a person to use CRUD (create, read, update, delete) for a movie collection database. Not enough time to spend on styles so I quickly modified the blog styles from the app built yesterday.
