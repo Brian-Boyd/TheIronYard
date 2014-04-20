@@ -1,4 +1,4 @@
-== Project: Horse Race
+== Project: Horse Race (Ruby)
 
 -At least one class is required
 -Race requires 4 horses each with a name
