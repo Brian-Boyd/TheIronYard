@@ -1,4 +1,4 @@
-== Assignment
+== Assignment (Blog in Bootstrap)
 
 Instructions 4/10/2014
 ----------------------
