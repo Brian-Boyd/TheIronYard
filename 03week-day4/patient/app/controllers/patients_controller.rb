@@ -11,7 +11,8 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.create patient_params
-    if @patient.save
+    success = @patient.save
+    if success == true
       flash[:notice] = "Success! Success!!"
       redirect_to root_path
     else
@@ -24,8 +25,14 @@ class PatientsController < ApplicationController
   end
 
   def update
-    @patient.update_attributes patient_params
-    redirect_to root_path
+    success = @patient.update_attributes patient_params
+    if success == true
+      flash[:notice] = "Successfully updated patient record"
+      redirect_to root_path
+    else
+      flash[:error] = "Please double check your entries"
+      render :edit
+    end 
   end
 
   def waiting
@@ -53,16 +60,24 @@ class PatientsController < ApplicationController
     redirect_to root_path   
   end
 
-  def leaving
-    @patient.release!
-    redirect_to release_patient_path(@patient)
+  def release
+    success = @patient.update_attributes patient_params
+    if success == true
+      flash[:notice] = "Your patient has been released from the hospital"
+      redirect_to root_path
+    else
+      flash[:error] = "Please enter release notes"
+      render :leaving
+    end
   end
 
-  def release
-    # @patient.update_attributes patient_params
-    # @patient.save
+  def leaving
+    @patient.release!
+    # success = @patient.update_attributes patient_params
+    # if success == true
+    #   @patient.release!
     #   flash[:notice] = "Your patient has been released from the hospital"
-    #   redirect_to root_path
+    #   redirect_to release_patient_path(@patient)
     # else
     #   flash[:error] = "Please enter release notes"
     #   render :leaving
