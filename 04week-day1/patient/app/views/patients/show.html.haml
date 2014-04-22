@@ -1,0 +1,25 @@
+%h3 Show Patient Information
+
+%span.label.label-danger
+  Hospital: 
+%p
+%span.label.label-danger
+  Patient's Name: 
+= @patient.name
+%p
+%span.label.label-danger
+  Symptoms: 
+= @patient.description
+%p
+%span.label.label-danger
+  Workflow: 
+= @patient.workflow_state
+%p
+%span.label.label-danger
+  Release Notes: 
+= @patient.release_note
+%p
+
+= link_to "Edit Patient", edit_patient_path, :class => 'box'
+= link_to "Home", root_path, :class => 'box pull-right'
+= link_to "Hospital Page", hospital_path(@hospital)
