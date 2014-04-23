@@ -20,16 +20,16 @@
       = link_to "Delete", hospital_patient_path(@hospital, patient), method: :delete
 
 %hr
-= link_to "New Medication", new_hospital_medication_path(@hospital)
-%ul 
-  Medications
-  - @medications.each do |medication|
-    %li
-      = link_to medication.name, hospital_medication_path(@hospital, medication)
-      |
-      = medication.description
-      |
-      = link_to "Edit", edit_hospital_medication_path(@hospital, medication)
-      |
-      = link_to "Delete", hospital_medication_path(@hospital, medication), method: :delete
-%hr
+/ = link_to "New Medication", new_hospital_patient_medication_path(@hospital, @patient)
+/ %ul 
+/   Medications
+/   - @medications.each do |medication|
+/     %li
+/       = link_to medication.name, hospital_medication_path(@hospital, medication)
+/       |
+/       = medication.description
+/       |
+/       = link_to "Edit", edit_hospital_medication_path(@hospital, medication)
+/       |
+/       = link_to "Delete", hospital_medication_path(@hospital, medication), method: :delete
+/ %hr

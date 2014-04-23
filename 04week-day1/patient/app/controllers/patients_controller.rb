@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController
+  before_filter :find_hospital
   before_filter :find_patient, only: [:show, :edit, :update, :waiting, :doctor, :xray, :surgery, :leaving, :billpay, :release]
   # around_filter :redirect_root, only: [:create, :update, :waiting, :doctor, :xray, :surgery, :leaving, :billpay]
 
@@ -87,6 +88,10 @@ class PatientsController < ApplicationController
 private
   def patient_params
     params.require(:patient).permit(:name, :description, :release_note)
+  end
+  
+  def find_hospital
+    @hospital = Hospital.find params[:hospital_id]
   end
 
   def find_patient

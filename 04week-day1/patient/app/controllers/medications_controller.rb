@@ -4,10 +4,13 @@ class MedicationsController < ApplicationController
 
   def new
     @medication = @patient.medications.new
+    # @medication = @patient.medications.new
+    # @medication = @hospital.patient.medications.new
   end
 
   def create
     @medication = @patient.medications.new medication_params
+    # @medication = @hospital.patient.medications.new medication_params
     if @medication.save
       redirect to hospital_path(@hospital)
     else

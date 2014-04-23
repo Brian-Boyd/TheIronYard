@@ -3,7 +3,6 @@ class HospitalsController < ApplicationController
 
   def show
     @patients = @hospital.patients
-    @medications = @hospital.medications
   end
 
   def new
