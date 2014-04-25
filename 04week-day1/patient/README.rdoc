@@ -1,3 +1,11 @@
+== Assignment 4/21/2014
+
+Hospital v2
+
+Change your relationships up a bit. You need to add Hospital and Medication. Your patients should live under your hospitals. And your medications should live under your patients. You should be able to create multiple hospitals and have many patients there. Your medications should also be related to your patients. You should be able to have many medications.
+
+
+
 == Assignment 4/17/2014 (Hospital Waiting List)
 
 We are creating a tracking system for a patient as he/she goes through a hospital

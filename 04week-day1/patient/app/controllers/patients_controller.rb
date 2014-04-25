@@ -10,7 +10,7 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = Patient.create patient_params
+    @patient = @hospital.patients.create patient_params
     success = @patient.save
     if success == true
       flash[:notice] = "Success! Success!!"
