@@ -2,6 +2,7 @@
 
 %span.label.label-danger
   Hospital: 
+= @hospital.name
 %p
 %span.label.label-danger
   Patient's Name: 
@@ -25,6 +26,10 @@
 = link_to "Hospital Page", hospital_path(@hospital)
 
 %hr
+
+
+
+
 / = link_to "New Medication", new_hospital_patient_medication_path(@hospital, @patient)
 / %ul 
 /   Medications

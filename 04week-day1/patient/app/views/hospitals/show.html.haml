@@ -5,31 +5,27 @@
 = @hospital.location
 %hr
 = link_to "New patient", new_hospital_patient_path(@hospital)
-%ul 
-  Patients
-  - @patients.each do |patient|
-    %li
-      = link_to patient.name, hospital_patient_path(@hospital, patient)
-      |
-      = patient.description
-      |
-      = patient.workflow_state
-      |
-      = link_to "Edit", edit_hospital_patient_path(@hospital, patient)
-      |
-      = link_to "Delete", hospital_patient_path(@hospital, patient), method: :delete
+
+%h4 Below are the list of patients currently waiting
+
+.list
+  %table.table-hover
+    %tr
+      %th Name
+      %th Status
+      %th Action
+    - @patients_processing.each do |patient|
+      %tr
+        %td
+          = link_to patient.name, hospital_patient_path(@hospital, patient), :class => 'box'
+        %td
+          (#{patient.workflow_state})
+        %td
+          = workflow_links(patient)
 
 %hr
-/ = link_to "New Medication", new_hospital_patient_medication_path(@hospital, @patient)
-/ %ul 
-/   Medications
-/   - @medications.each do |medication|
-/     %li
-/       = link_to medication.name, hospital_medication_path(@hospital, medication)
-/       |
-/       = medication.description
-/       |
-/       = link_to "Edit", edit_hospital_medication_path(@hospital, medication)
-/       |
-/       = link_to "Delete", hospital_medication_path(@hospital, medication), method: :delete
-/ %hr
+- @patients_completed.each do |patient|
+  = link_to patient.name, hospital_patient_path(@hospital, patient)
+  helped at
+  = patient.updated_at.strftime("%l:%M%p")
+  %br

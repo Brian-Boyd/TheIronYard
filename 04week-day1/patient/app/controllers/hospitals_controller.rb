@@ -2,7 +2,8 @@ class HospitalsController < ApplicationController
   before_filter :find_hospital, only: [:show, :edit, :update, :destroy]
 
   def show
-    @patients = @hospital.patients
+    @patients_processing = @hospital.patients.where.not(workflow_state: 'leaving')
+    @patients_completed = @hospital.patients.where(workflow_state: 'leaving')
   end
 
   def new

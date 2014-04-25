@@ -1,7 +1,6 @@
 class PatientsController < ApplicationController
   before_filter :find_hospital
   before_filter :find_patient, only: [:show, :edit, :update, :waiting, :doctor, :xray, :surgery, :leaving, :billpay, :release]
-  # around_filter :redirect_root, only: [:create, :update, :waiting, :doctor, :xray, :surgery, :leaving, :billpay]
 
   def show
   end
@@ -38,27 +37,27 @@ class PatientsController < ApplicationController
 
   def waiting
     @patient.go_to_waiting!
-    redirect_to root_path
+    redirect_to hospital_path(@hospital)
   end
 
   def doctor
     @patient.go_to_doctor!
-    redirect_to root_path
+    redirect_to hospital_path(@hospital)
   end
 
   def xray
     @patient.go_to_xray!
-    redirect_to root_path   
+    redirect_to hospital_path(@hospital)   
   end
 
   def surgery
     @patient.go_to_surgery!
-    redirect_to root_path   
+    redirect_to hospital_path(@hospital)   
   end
 
   def billpay
     @patient.go_to_billpay!
-    redirect_to root_path   
+    redirect_to hospital_path(@hospital)   
   end
 
   def release
@@ -74,15 +73,6 @@ class PatientsController < ApplicationController
 
   def leaving
     @patient.release!
-    # success = @patient.update_attributes patient_params
-    # if success == true
-    #   @patient.release!
-    #   flash[:notice] = "Your patient has been released from the hospital"
-    #   redirect_to release_patient_path(@patient)
-    # else
-    #   flash[:error] = "Please enter release notes"
-    #   render :leaving
-    # end
   end
 
 private
@@ -97,9 +87,5 @@ private
   def find_patient
     @patient = Patient.find params[:id]
   end
-
-  # def redirect_root
-  #   redirect_to root_path 
-  # end
 
 end

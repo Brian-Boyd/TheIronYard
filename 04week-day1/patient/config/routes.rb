@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   resources :hospitals do
     resources :patients do
-     resources :medications
+      resources :medications
       member do
         patch :waiting
         patch :doctor
