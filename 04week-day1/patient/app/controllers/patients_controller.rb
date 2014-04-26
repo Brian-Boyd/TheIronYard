@@ -14,7 +14,7 @@ class PatientsController < ApplicationController
     success = @patient.save
     if success == true
       flash[:notice] = "Success! Success!!"
-      redirect_to root_path
+      redirect_to hospital_patient_path(@hospital, @patient)
     else
       flash[:error] = "Error detected. Please try again."
       render :new
@@ -28,7 +28,7 @@ class PatientsController < ApplicationController
     success = @patient.update_attributes patient_params
     if success == true
       flash[:notice] = "Successfully updated patient record"
-      redirect_to root_path
+      redirect_to hospital_patient_path(@hospital, @patient)
     else
       flash[:error] = "Please double check your entries"
       render :edit
