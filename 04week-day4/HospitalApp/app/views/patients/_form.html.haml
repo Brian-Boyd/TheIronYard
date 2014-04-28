@@ -1,0 +1,10 @@
+= form_for [@hospital, @patient] do |f|
+  = render 'layouts/error_messages', object: @patient
+  = f.label :name
+  = f.text_field :name
+  %br
+  = f.label :description
+  = f.text_area :description
+  %br
+  = f.submit
+= link_to "Cancel", hospital_path(@hospital)
