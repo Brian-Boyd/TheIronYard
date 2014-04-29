@@ -1,0 +1,45 @@
+%h3 Show Patient Information
+
+%span.label.label-danger
+  Hospital: 
+= @hospital.name
+%p
+%span.label.label-danger
+  Patient's Name: 
+= @patient.name
+%p
+%span.label.label-danger
+  Symptoms: 
+= @patient.description
+%p
+%span.label.label-danger
+  Workflow: 
+= @patient.workflow_state
+%p
+%span.label.label-danger
+  Release Notes: 
+= @patient.release_note
+%p
+
+= link_to "Edit Patient", edit_hospital_patient_path, :class => 'box'
+= link_to "Home", root_path, :class => 'box pull-right'
+= link_to "Hospital Page", hospital_path(@hospital)
+
+%hr
+
+
+
+
+= link_to "New Medication", new_hospital_patient_medication_path(@hospital, @patient)
+%ul 
+  Medications
+  - @patient.medications.each do |medication|
+    %li
+      = link_to medication.name, hospital_patient_medication_path(@hospital, @patient, medication)
+      |
+      = medication.description
+      |
+      = link_to "Edit", edit_hospital_patient_medication_path(@hospital, @patient, medication)
+      |
+      = link_to "Delete", hospital_patient_medication_path(@hospital, @patient, medication), method: :delete
+%hr
