@@ -7,7 +7,7 @@ class Patient < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
 
-  before_create :send_patient_email
+  before_create :new_patient_email
 
   def new_patient_email
     PatientMailer.new_patient_email(self).deliver
