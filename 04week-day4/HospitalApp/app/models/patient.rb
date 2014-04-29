@@ -1,10 +1,8 @@
 class Patient < ActiveRecord::Base
-  # belongs_to :hopsital
   has_many :medications
-  has_many :hospital_patient_join
-  has_many :hospitals, through: :hospital_patient_join
+  has_many :hospital_patient_joins
+  has_many :hospitals, through: :hospital_patient_joins
   has_many :doctors, as: :curable
-  # belongs_to :curable, polymorphic: true
 
   validates :name, presence: true
   validates :description, presence: true

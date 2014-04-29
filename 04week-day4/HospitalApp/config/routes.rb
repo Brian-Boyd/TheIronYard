@@ -1,27 +1,26 @@
 Rails.application.routes.draw do
-  get 'doctors/name'
 
   root 'home#index'
   
   resources :hospitals do
     member do
-      get :doctor
-      post :add_doctor
+      get :new_doctor
+      post :create_doctor
     end
-  resources :patients do
-    resources :medications
-    member do
-      patch :waiting
-      patch :doctor
-      patch :xray
-      patch :surgery
-      patch :billpay
-      patch :leaving
-      get :release
-      get :doctor
-      post :add_doctor
+    resources :patients do
+      resources :medications
+      member do
+        patch :waiting
+        patch :doctor
+        patch :xray
+        patch :surgery
+        patch :billpay
+        patch :leaving
+        get :release
+        get :new_doctor
+        post :create_doctor
+      end
     end
-  end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

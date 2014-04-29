@@ -21,16 +21,16 @@ ActiveRecord::Schema.define(version: 20140426152012) do
     t.datetime "updated_at"
   end
 
+  create_table "hospital_patient_joins", force: true do |t|
+    t.integer "hospital_id"
+    t.integer "patient_id"
+  end
+
   create_table "hospitals", force: true do |t|
     t.string   "name"
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "hospitals_patients_joins", force: true do |t|
-    t.integer "hospital_id"
-    t.integer "patient_id"
   end
 
   create_table "medications", force: true do |t|

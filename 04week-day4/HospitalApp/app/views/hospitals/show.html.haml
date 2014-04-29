@@ -24,8 +24,17 @@
           = workflow_links(patient)
 
 %hr
+
 - @patients_completed.each do |patient|
   = link_to patient.name, hospital_patient_path(@hospital, patient)
   helped at
   = patient.updated_at.strftime("%l:%M%p")
+  %br
+
+%hr
+
+= link_to "New Doctor", new_doctor_hospital_path(@hospital)
+
+- @hospital.doctors.each do |doctor|
+  = doctor.name
   %br
