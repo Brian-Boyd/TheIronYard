@@ -4,5 +4,6 @@ class HomeController < ApplicationController
     # @doctors = Doctors.all
     @patients = Patient.all
     @medications = Medication.all
+    @hospitals = Hospital.order("name").page(params[:page]).per(5)
   end
 end
