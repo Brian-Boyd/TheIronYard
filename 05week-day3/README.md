@@ -29,7 +29,3 @@ I want you to paginate your pages as well. Group your patients/hospitals/medicat
   # if it's not empty
     # show your submit button
 -----------------------------------
-
-REQUIRES ATTENTION:
-
-1) From home page, click "Create Hospital" and the submit button appears when it should not. If reloading the page, it will work.

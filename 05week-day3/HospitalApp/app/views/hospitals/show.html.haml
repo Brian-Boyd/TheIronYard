@@ -10,18 +10,19 @@
 
 .list
   %table.table-hover
-    %tr
-      %th Name
-      %th Status
-      %th Action
-    - @patients_processing.each do |patient|
+    %tbody
       %tr
-        %td
-          = link_to patient.name, hospital_patient_path(@hospital, patient), :class => 'box'
-        %td
-          (#{patient.workflow_state})
-        %td
-          = workflow_links(patient)
+        %th Name
+        %th Status
+        %th Action
+      - @patients_processing.each do |patient|
+        %tr
+          %td
+            = link_to patient.name, hospital_patient_path(@hospital, patient), :class => 'box'
+          %td
+            (#{patient.workflow_state})
+          %td
+            = workflow_links(patient)
 
 %hr
 
