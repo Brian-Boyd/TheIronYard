@@ -27,20 +27,20 @@ I want you to paginate your pages as well. Group your patients/hospitals/medicat
 
 -----------------------------------
 
-# Hide the submit button via javascript
-  # Play around with selectors until you find your submit button
-    # Preferably use a class on the submit button
-    # = f.submit "Submit", class: "asdf"
-# Find the text boxes we want to validate
-  # via javascript
-# Find an event on jquery that will allow us to access the
-  # data inside of the text box when the user changes it
+- Hide the submit button via javascript
+  - Play around with selectors until you find your submit button
+    - Preferably use a class on the submit button
+    - = f.submit "Submit", class: "asdf"
+- Find the text boxes we want to validate
+  - via javascript
+- Find an event on jquery that will allow us to access the
+  - data inside of the text box when the user changes it
   
-# When that event occurs, check to see what the data is inside the text box
-  # if it's empty
-    # hide your submit button
-  # if it's not empty
-    # show your submit button
+- When that event occurs, check to see what the data is inside the text box
+  - if it's empty
+    - hide your submit button
+  - if it's not empty
+    - show your submit button
 -----------------------------------
 
 
