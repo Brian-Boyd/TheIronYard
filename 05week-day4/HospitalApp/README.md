@@ -25,8 +25,6 @@ I also want you to have your flash messages fade out over time. For example, whe
 
 I want you to paginate your pages as well. Group your patients/hospitals/medications up in groups of 10. Anything more then 10, create a new group. If you have 3 groups of patients, you should have 3 links at the bottom for each page: 1 | 2 | 3. Pagination!
 
------------------------------------
-
 - Hide the submit button via javascript
   - Play around with selectors until you find your submit button
     - Preferably use a class on the submit button
@@ -41,14 +39,11 @@ I want you to paginate your pages as well. Group your patients/hospitals/medicat
     - hide your submit button
   - if it's not empty
     - show your submit button
------------------------------------
 
 
 =====================================
 == Assignment 4/24/2014 (Hospital v3)
 =====================================
-Hospital v3
-
 We are adding on to the hospital applications. I want you to create another entity on the top level of your application. Currently we have Hospitals > Patients > Medications.
 
 I want you to turn your single hospital to patient relation into a patient being able to exist in multiple hospitals.
@@ -59,9 +54,6 @@ I also want you to create a new entity called "Doctors" that live inside of hosp
 =====================================
 == Assignment 4/21/2014 (Hospital v2)
 =====================================
-
-Hospital v2
-
 Change your relationships up a bit. You need to add Hospital and Medication. Your patients should live under your hospitals. And your medications should live under your patients. You should be able to create multiple hospitals and have many patients there. Your medications should also be related to your patients. You should be able to have many medications.
 
 - improve on the app build over the weekend to include the following.
@@ -76,7 +68,6 @@ Change your relationships up a bit. You need to add Hospital and Medication. You
 =====================================
 == Assignment 4/17/2014 (Hospital v1)
 =====================================
-
 We are creating a tracking system for a patient as he/she goes through a hospital
 
 - Use the Workflow gem we used today to control patient statuses.
