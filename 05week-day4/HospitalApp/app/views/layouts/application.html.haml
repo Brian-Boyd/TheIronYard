@@ -5,9 +5,83 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %div.container
+    .container
       .header
-        %h1.tac The Iron Yard Hospital & Care Center
-
-      = render 'layouts/flash'
-      = yield
+        / logo, top nav and head title
+        .header-left
+          %h1.tac
+            The Medical
+            %br Outsourcing Group
+        .header-right
+          Brian Boyd, CEO
+          %br
+            510 Mill Street
+            %br
+              (843) 425-7030
+              %br
+                brian@cubicalweb.com
+      / end header
+      .nav-main
+        / logo, top nav and head title
+        .nav-left
+          %ul
+            %li
+              %a.nav-list-item{:href => "/"} Home
+            %li
+              %a.nav-list.nav-list-item{:href => "/"} Hospitals
+            %li
+              %a.nav-list.nav-list-item{:href => "/"} Doctors
+            %li
+              %a.nav-list.nav-list-item{:href => "/"} Patients
+        .nav-right
+          %form#search-blog{:action => "", :method => "get"}
+            %input{:type => "search"}/
+            %input{:type => "submit", :value => "Search"}/
+      / end navbar
+      .billboard
+        / logo, top nav and head title
+        %img{:src => "/assets/header.jpg"}
+      / end billboard
+      .sliderbottom
+        / logo, top nav and head title
+        %img{:src => "/assets/sliderbottom.png"}
+      / end sliderbottom
+      .left-column
+        / your main content
+        = render 'layouts/flash'
+        = yield
+      / end main content
+      .right-column
+        / your sidebar
+        .boxshadow
+          .widget-title
+            %h5 Breakout of Spattergroit
+          %p In the news today, doctors have confirmed a major breakout of Spattergroit, a disease that covers the victim in purple pustules and renders them unable to speak. The only known cure, according to the portrait of a Healer in St. Mungo's Hospital for Magical Maladies and Injuries, is to bind the liver of a toad around the victim's throat and stand nude in a barrel of eel's eyes under a full moon.
+        .boxshadow
+          .widget-title
+            %h5 Hemoglophagia on the Rise
+          %p A recent medical study reveiled that Hemoglophagia is on the rise. This is a disease responsible for turning many humans into vampire-like creatures. Contrary to most vampiral diseases, hemoglophagia drastically shortens the lifespan of an infected individual to little over a decade.
+        .boxshadow
+          .widget-title
+            %h5 Dright Wrong, M.D.
+          %p Another breaking story that just crossed the newswire today is that last year's winner of the Lifelong Medical Achievement Award, Dright Wrong was stripped of award. The reason is because he never went to med school. Mr. Wrong's stated that he was living at a Holiday Inn express and he felt like he was up to the task.
+      / end sidebar
+      .footer
+        / your footer
+        .footer-logo
+        .footer-copyright
+          \&copy; 2014 Brian Boyd
+          %br
+            An Ironyard Project
+        .footer-right
+          %ul
+            %li
+              %a{:href => "/"} Home
+            %li
+              %a{:href => "/"} Hospitals
+            %li
+              %a{:href => "/"} Doctors
+            %li
+              %a{:href => "/"} Patients
+      / end footer
+    / end container

@@ -3,6 +3,6 @@ class HomeController < ApplicationController
     @hospitals = Hospital.all
     @patients = Patient.all
     @medications = Medication.all
-    @hospitals = Hospital.order("id").page(params[:page]).per(5)
+    @hospitals = Hospital.order("id").page(params[:page]).per(9)
   end
 end
