@@ -43,6 +43,10 @@ a.box-color {
   background: #df691a;
 }
 
+a.patient-details {
+  margin-top: 30px;
+}
+
 /* ------------------- */
 
 * {

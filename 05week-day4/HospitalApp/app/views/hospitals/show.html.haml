@@ -4,7 +4,9 @@
 %br
 = @hospital.location
 %hr
-= link_to "New patient", new_hospital_patient_path(@hospital), :class => 'box box-color pull-right'
+= link_to "New patient", new_hospital_patient_path(@hospital, anchor: "patient-details"), :class => 'box box-color pull-right'
+
+= render 'patients/search'
 
 %h4 Below are the list of patients currently waiting
 
@@ -41,5 +43,3 @@
   %br
 
 %hr
-
-= render 'patients/search'

@@ -59,6 +59,16 @@ var when_page_is_ready = function() {
     })
   });
 
+  $(document.body).on("submit", ".patient_search", function() {
+    $.ajax({
+      type: "GET",
+      // url: $(this).serialize(),
+      url: $(this).attr(),
+      dataType: "script"
+    })
+  });
+
+
 }
 $(document).ready(when_page_is_ready);
 $(document).on("page:load", when_page_is_ready);
