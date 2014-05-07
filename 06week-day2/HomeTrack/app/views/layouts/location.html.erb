@@ -37,20 +37,6 @@
       </div>
     </div><!-- end navbar -->
 
-    <div class="billboard-container">
-      <div class="billboard-left">
-        
-      </div>
-      <div class="billboard-right">
-
-        <%= yield %>
-  
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-
-      </div>
-    </div><!-- end billboard-container -->
-
     <div class="billboard-bottom-container">
       <div class="billboard-bottom-left">
         <h2>Learn to code. Get a job. Guaranteed.</h2>
@@ -61,6 +47,11 @@
     <div class="left-column">
       <!-- your main content -->
       <div class="main-content-home">
+
+        <%= yield %>
+  
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
         <div class="col-md-4 col-sm-6">
           <div class="col-item">

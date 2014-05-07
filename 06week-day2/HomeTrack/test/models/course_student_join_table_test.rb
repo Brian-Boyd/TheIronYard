@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LocationsTest < ActiveSupport::TestCase
+class CourseStudentJoinTableTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

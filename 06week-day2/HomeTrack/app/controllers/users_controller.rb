@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_user!
+  before_filter :find_location
 
   def show
   end
@@ -19,12 +21,9 @@ class StudentsController < ApplicationController
   end
 
 private
-  def find_location
-    @name = Name.find params[:id]
-  end
 
-  def _params
-    params.require(:name).permit(:name)
+  def find_location
+    @location = Location.find params[:location_id]
   end
 
 end
