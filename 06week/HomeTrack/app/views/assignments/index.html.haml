@@ -1,0 +1,27 @@
+%h1 Listing assignments
+
+%p#notice= notice
+
+%table
+  %tr
+    %th Name
+    %th Course
+    %th User
+    %th
+    %th
+    %th
+
+  - @assignments.each do |assignment|
+    %tr
+      %td= assignment.name
+      %td= assignment.course_id
+      %td= assignment.user_id
+      %td= link_to 'Show', location_course_assignment_path(@location, @course, assignment)
+      %td= link_to 'Edit', edit_location_course_assignment_path(@location, @course, assignment)
+      %td= link_to 'Destroy', location_course_assignment_path(@location, @course, assignment), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Assignment', new_location_course_assignment_path
+%p
+= link_to 'Home', root_path
