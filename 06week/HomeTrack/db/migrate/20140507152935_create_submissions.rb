@@ -5,6 +5,7 @@ class CreateSubmissions < ActiveRecord::Migration
       t.integer :user_id
       t.string :name
       t.string :description
+      t.string :workflow_state
 
       t.timestamps
     end

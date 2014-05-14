@@ -22,7 +22,7 @@ class CoursesController < ApplicationController
     success = @course.save
     if success == true
       flash[:notice] = "Course was successfully created!"
-      redirect_to root_path
+      redirect_to location_path(@location)
     else
       flash[:error] = "Error detected. Please try again."
       render :new

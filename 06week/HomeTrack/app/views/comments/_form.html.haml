@@ -14,3 +14,15 @@
     = f.text_field :commentable_type
   .actions
     = f.submit 'Save'
+
+/ - comments.each do |comment|
+/   %strong= comment.user.email
+/   %p= comment.comment
+/   %hr
+/ = form_for comments.build, :remote => true do |f|
+/   = f.text_area :comment, :placeholder => "Enter your comment"
+/   = f.hidden_field :user_id, :value => current_user.id
+/   = f.hidden_field :commentable_id
+/   = f.hidden_field :commentable_type
+/   %br
+/   = f.submit

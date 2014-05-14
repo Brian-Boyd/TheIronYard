@@ -23,7 +23,9 @@ ActiveRecord::Schema.define(version: 20140512150423) do
   end
 
   create_table "comments", force: true do |t|
+    t.string   "name"
     t.text     "comment"
+    t.integer  "user_id"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.datetime "created_at"
@@ -34,7 +36,6 @@ ActiveRecord::Schema.define(version: 20140512150423) do
     t.string   "name"
     t.text     "description"
     t.integer  "location_id"
-    t.integer  "instructor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +48,8 @@ ActiveRecord::Schema.define(version: 20140512150423) do
   end
 
   create_table "links", force: true do |t|
+    t.string   "links"
+    t.integer  "submission_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -62,6 +65,7 @@ ActiveRecord::Schema.define(version: 20140512150423) do
     t.integer  "user_id"
     t.string   "name"
     t.string   "description"
+    t.string   "workflow_state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

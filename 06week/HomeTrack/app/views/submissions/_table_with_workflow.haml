@@ -1,7 +1,7 @@
-%tr{ class: "#{patient.workflow_state} patient patient_#{patient.id}"}
+%tr{ class: "#{submission.workflow_state} submission submission_#{submission.id}"}
   %td
-    = link_to patient.name, hospital_patient_path(@hospital, patient, anchor: "patient-details"), class: "box"
+    = link_to submission.name, location_course_assignment_submission_path(@location, @course, @assignment, @submission, anchor: "submission-details"), class: "box"
   %td
-    (#{patient.workflow_state})
+    (#{submission.workflow_state})
   %td
-    = workflow_links(patient)
+    = workflow_links(submission)

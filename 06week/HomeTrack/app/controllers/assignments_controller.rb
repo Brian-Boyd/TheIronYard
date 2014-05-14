@@ -7,13 +7,15 @@ class AssignmentsController < ApplicationController
   def index
     @assignments = Assignment.all
     @courses = @location.courses.all
-    @assignments = @course.assignments.all
+    @assignments = Assignment.all
+    # @assignments = @course.assignment.all
   end
 
   def show
     @locations = Location.all 
-    @courses = @location.courses.all
-    @assignments = @course.assignments.all
+    @courses = Course.all
+    @assignments = Assignment.all
+    # @assignments = @course.assignment.all
   end
 
   def new

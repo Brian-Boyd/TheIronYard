@@ -1,19 +1,34 @@
-= form_for @submission do |f|
-  - if @submission.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@submission.errors.count, "error")} prohibited this submission from being saved:"
-      %ul
-        - @submission.errors.full_messages.each do |msg|
-          %li= msg
+/ = form_for @submission do |f|
+/   - if @submission.errors.any?
+/     #error_explanation
+/       %h2= "#{pluralize(@submission.errors.count, "error")} prohibited this submission from being saved:"
+/       %ul
+/         - @submission.errors.full_messages.each do |msg|
+/           %li= msg
 
-  .field
+/   .field
+/     = f.label :name
+/     = f.text_field :name
+/   .field
+/     = f.label :assignment_id
+/     = f.number_field :assignment_id
+/   .field
+/     = f.label :user_id
+/     = f.number_field :user_id
+/   .actions
+/     = f.submit 'Save'
+
+= nested_form_for [@location, @course, @assignment, @submission] do |f|
+  .inputs
     = f.label :name
     = f.text_field :name
+  .inputs
+    = f.label :description
+    = f.text_field :description
   .field
-    = f.label :assignment_id
-    = f.number_field :assignment_id
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
+    = f.fields_for :links do |link_form|
+      = link_form.text_field :links
+      = link_form.link_to_remove "Remove this link"
+    %p= f.link_to_add "Add a link", :links
   .actions
     = f.submit 'Save'

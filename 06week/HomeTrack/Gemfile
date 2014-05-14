@@ -13,6 +13,7 @@ gem 'jquery-ui-rails'
 gem "cancan"
 gem 'kaminari'
 gem 'simple_form'
+gem 'nested_form'
 
 gem 'rails', '4.1.1'
 gem 'sass-rails', '~> 4.0.3'

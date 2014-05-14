@@ -1,4 +1,4 @@
-%p#notice= notice
+/ %p#notice= notice
 
 %p
   %b Name:
@@ -7,10 +7,21 @@
 
 = link_to 'Edit Course', edit_location_course_path
 \|
-= link_to 'Back', location_courses_path
+= link_to 'Back to List of Courses', location_path(@location)
+\|
+= link_to 'Delete Course', location_course_path(@location, @course), :method => :delete, :data => { :confirm => 'Are you sure?' }
 \|
 = link_to 'Add New Course', new_location_course_path(@location, @course)
 %p
 = link_to 'Add Assignment', new_location_course_assignment_path(@location, @course, @assignment)
+%p
+
+%ul 
+  Assignments
+  - @course.assignments.each do |assignment|
+    %li
+      = link_to assignment.name, location_course_assignment_path(@location, @course, assignment)
+      %br
+      #{assignment.description}
 %p
 = link_to 'Home', root_path

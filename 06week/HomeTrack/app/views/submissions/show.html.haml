@@ -15,10 +15,3 @@
 = link_to 'Back', location_course_assignment_submission_path(@location, @course, @assignment, @submission)
 %p
 = link_to 'Home', root_path
-
-%b Comments:
-%ul
-  - @submission.comments.each do |comment|
-    %li
-    = comment.comment
-= link_to "Add Comment", comment_location_course_assignment_submission_path(@location, @course, @assignment, @submission, @comment)

@@ -2,9 +2,12 @@
   %b Name:
   = @location.name
 
-= link_to 'Edit', edit_location_path(@location)
+= link_to 'Edit Location', edit_location_path(@location)
 \|
 = link_to 'Back', locations_path
+\|
+= link_to 'Delete Location', location_path(@location), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
 %p
 = link_to 'Add Course', new_location_course_path(@location)
 %ul 
@@ -12,9 +15,5 @@
   - @courses.each do |course|
     %li
       = link_to course.name, location_course_path(@location, course)
-      |
-      = link_to "Edit", edit_location_course_path(@location, course)
-      |
-      = link_to "Delete", location_course_path(@location, course), method: :delete
 %p
 = link_to 'Home', root_path

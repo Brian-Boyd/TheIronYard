@@ -16,11 +16,11 @@ class SubmissionsController < ApplicationController
   end
 
   def create
-    @submission = Submission.create submission_params.merge(user_id: current_user.id)
+    @submission = @assignment.submissions.create submission_params.merge(user_id: current_user.id)
     success = @submission.save
     if success == true
       flash[:notice] = "Submission was successfully created!"
-      redirect_to location_courses_path(@location, @course)
+      redirect_to location_course_assignment_path(@location, @course, @assignment)
     else
       flash[:error] = "Error detected. Please try again."
       render :new
@@ -80,12 +80,14 @@ class SubmissionsController < ApplicationController
 private
 
   def submission_params
-    params.require(:submission).permit(:assignment_id, :workflow_state, :title,
+    params.require(:submission).permit(:assignment_id, :workflow_state, :name, :description,
       links_attributes: [:id, :links, :submission_id, :_destroy])
+
   end
 
   def find_assignment
-    @assignment = @location.course.assignment.find params[:assignment_id]
+    @assignment = Assignment.find params[:assignment_id]
+    # @assignment = @location.course.assignment.find params[:assignment_id]
   end
 
   def find_course

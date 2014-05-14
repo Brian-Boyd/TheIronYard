@@ -1,6 +1,6 @@
-%h1 Listing assignments
+%h1 Assignments
 
-%p#notice= notice
+/ %p#notice= notice
 
 %table
   %tr
@@ -23,5 +23,7 @@
 %br
 
 = link_to 'New Assignment', new_location_course_assignment_path
+%p
+= link_to 'Back', location_course_path(@location, @course)
 %p
 = link_to 'Home', root_path

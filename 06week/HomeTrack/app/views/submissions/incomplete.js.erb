@@ -1,4 +1,3 @@
-console.log("<%= @patient.inspect %>")
-$("tr.patient_" + "<%= @patient.id %>").replaceWith(
-  "<%= escape_javascript(render(partial: 'hospitals/table_with_workflow', locals: { patient: @patient})) %>"
-)
+$("li.submission_" + "<%= @submission.id %>").replaceWith(
+  "<%= escape_javascript(render(partial: 'table_with_workflow', locals:{ submission: @submission})) %>"
+  )
