@@ -73,6 +73,10 @@ div.container {
   /*border: 1px dashed red;*/
 }
 
+.title-tag {
+  font-family: 'Shojumaru', cursive;
+}
+
 /*********************/
 /* NAVIGATION STYLES */
 /*********************/

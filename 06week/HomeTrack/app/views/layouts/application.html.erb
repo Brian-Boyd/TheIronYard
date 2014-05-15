@@ -5,24 +5,66 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Shojumaru' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
   <div class="container">
 
-    <div class="nav-left">
-      <% if user_signed_in? %>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-      <% end %>
-    </div>
+    <div class="header">
+      <!-- logo, top nav and head title -->
+        <div class="header-left"><h1 class="tac title-tag">The Iron Yard<br>King of Code</h1></div>
+        <div class="header-right">
+          123 Corporate Way<br>
+          (888) 888-8888<br>
+          KingCode@gmail.com
+        </div>
+    </div><!-- end header -->
+
+    <div class="nav-main">
+      <!-- logo, top nav and head title -->
+      <div class="nav-left">
+        <ul>
+          <li><a href="/" class="nav-list-item">Home</a></li>
+          <!-- <li><a href="/" class="nav-list nav-list-item">Locations</a></li> -->
+          <!-- <li><a href="/" class="nav-list nav-list-item">Courses</a></li> -->
+          <!-- <li><a href="/" class="nav-list nav-list-item">Students</a></li> -->
+        </ul>
+      </div>
+      <div class="nav-right">
+        <% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, class: "pull-right", :method => :delete) %>
+        <% end %>
+      </div>
+    </div><!-- end navbar -->
+
+    <div class="left-column">
+      <!-- your main content -->
       <div class="main-content-home">
+
+        <%= yield %>
   
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
 
-        <%= yield %>
-
+      </div>
     </div><!-- end main content -->
+
+    <div class="footer">
+      <!-- your footer -->
+      <div class="footer-logo"></div>
+      <div class="footer-copyright">
+        &copy; 2014 Brian Boyd<br>An Ironyard Student Project
+      </div>
+      <div class="footer-right">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <!-- <li><a href="#">Locations</a></li> -->
+          <!-- <li><a href="#">Courses</a></li> -->
+          <!-- <li><a href="#">Students</a></li> -->
+        </ul>
+      </div>
+    </div><!-- end footer -->
 
   </div><!-- end container -->
 
