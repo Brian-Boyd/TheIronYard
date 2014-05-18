@@ -9,3 +9,22 @@ On Monday we are starting Angular and so I'm not sure if I will have time to ret
 
 == NOTE: if you install this add, make sure you seed the database.
          rake db:create db:migrate db:seed
+
+== To DO:
+
+1) Add the ability to delete individual line items from the cart. This will require buttons on each line, and such buttons will need to be linked to the ​destroy​ action in the ​LineItemsController​.
+
+2) The cart is currently hidden when the user empties it by redrawing the entire catalog. Can you change the application to use the jQuery UI ​blind​ effect instead?
+
+3) Add a button next to each item in the cart. When clicked, it should invoke an action to decrement the quantity of the item, deleting it from the cart when the quantity reaches zero. Get it working without using Ajax first and then add the Ajax goodness.
+
+4) What happens if you click the ​Checkout​ button in the sidebar while the checkout screen is already displayed? Can you find a way to disable the button in this circumstance?
+
+5) The list of possible payment types is currently stored as a constant in the ​Order​ class. Can you move this list into a database table? Can you still make validation work for the field?
+
+6) Add devise for login authentication.
+
+7) Add cancan for limiting access per user role. Either admin or normal user.
+
+8) Integrate the use of sending emails for confirmation of order.
+
