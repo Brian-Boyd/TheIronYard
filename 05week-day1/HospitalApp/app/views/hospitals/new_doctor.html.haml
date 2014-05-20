@@ -1,9 +1,0 @@
-%h3 Add New Doctor
-
-= form_for [@hospital, @doctor], url: create_doctor_hospital_path(@hospital) do |f|
-  = f.label :name
-  = f.text_field :name
-  %br
-  = f.submit
-  
-= link_to "Cancel", hospital_path(@hospital)
