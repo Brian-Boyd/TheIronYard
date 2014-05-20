@@ -1,4 +1,4 @@
-# Student Homework Tracker
+== Student Homework Tracker
 
 We are going to be creating a project to keep track of your homework submissions. You will have user authentication to control user homework submissions. A user will submit many assignments as well. The format of the data will be based on Iron Yard location. I should be able to make as many TIY locations as I want. Each location will also have an unlimited number of classes. For instance, if we open a back-end class in the future using Clojure, I should be able to add that as a cohort. Each student (during user registration) should be able to select multiple locations/cohorts to assign themselves to.
 
