@@ -1,0 +1,42 @@
+Tables:
+  Locations
+  Courses
+  Users
+  CoursesUserJoinTable
+  Assignments
+  Comments
+  Submissions
+  Links
+
+Process:
+  Home Page (with create/login form)
+  
+
+Admin Process:
+  Enrolls
+  Adds Courses
+  Adds Locations
+  When adding locations, there will be checkboxes available for all available courses so the instructor can add courses to location.
+
+Student Process:
+  Enrolls in one or more locations and courses
+  Profile View/Edit
+  Assignment Panel
+
+Admin Process:
+  Creates assignment
+
+Student Process:
+  View assignment
+  Submit completed assignment
+
+Admin Process:
+  Review assignment
+  Comment and/or edits assignment submission
+  Changes workflow
+
+Student Process:
+  Replies to comments from instructor
+
+
+
