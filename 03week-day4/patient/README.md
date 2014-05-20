@@ -1,4 +1,4 @@
-== Assignment 4/17/2014 (Hospital Waiting List)
+== Assignment 4/17/2014 (Hospital v1)
 
 We are creating a tracking system for a patient as he/she goes through a hospital
 
