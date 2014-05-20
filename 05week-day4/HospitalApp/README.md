@@ -1,14 +1,8 @@
-#### Notes 5/2/2014 
-
-====================================
-== Assignment 5/2/2014 (Hospital v6)
-====================================
-Turn your search functions into an AJAX call!   When you search, it shouldn't redirect to a search page. It should re-render the list of patients with the new list.
-
-
 ====================================
 == Assignment 5/1/2014 (Hospital v5)
 ====================================
+Turn your search functions into an AJAX call!   When you search, it shouldn't redirect to a search page. It should re-render the list of patients with the new list.
+
 Convert workflow to AJAX.
 
 
