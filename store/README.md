@@ -25,3 +25,8 @@ Version 1 is all the steps through chapter 12 and the app works beautifully.
 7) Add cancan for limiting access per user role. Either admin or normal user.
 
 8) Integrate the use of sending emails for confirmation of order.
+
+=====================================
+Added...
+
+Devise

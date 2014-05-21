@@ -2,14 +2,14 @@
 <p id="notice"><%= notice %></p>
 <% end %>
  
-<h1>Your Pragmatic Catalog</h1>
+<h1>Movie Catalog</h1>
  
 <% @products.each do |product| %>
-  <div class="row entry">
+  <div class="row entry main">
     <div class="image-container col-xs-1">
       <%= image_tag(product.image_url) %>
     </div>
-    <div class="movie-col-1 col-xs-7">
+    <div class="movie-col-1 col-xs-7 post">
       <h3><%= product.title %></h3>
       <p><%= product.mpaa_rating %> | <%= product.runtime %> minutes | Released: <%= product.release_year %></p>
       <p><%= product.genre %></p>
@@ -18,7 +18,7 @@
       <p><strong>Starring</strong>: <%= product.starring %></p>
       <p>Viewer Rating: <%= product.viewer_rating %> by <%= product.viewer_count %> viewers</p>
     </div>
-    <div class="movie-col-2 col-xs-4">
+    <div class="movie-col-2 col-xs-2">
       <span class="price"><%= number_to_currency(product.price) %></span>
       <%= button_to 'Add to Cart', line_items_path(product_id: product), class: 'btn btn-success', remote: true %>
     </div>
